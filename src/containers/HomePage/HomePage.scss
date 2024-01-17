@@ -1,0 +1,163 @@
+ //custom slick slider
+ .slick-prev {
+    // border: 1px solid red !important;
+    // position: relative !important;
+    right: 98% !important;
+    z-index: 10 !important;
+    height: 50px !important;
+    width: 50px !important;
+    border-radius: 8px !important;
+    border: 1px solid !important;
+    border-color: rgb(181, 231, 237) !important;
+    background-color: rgb(255, 255, 255) !important;
+    box-shadow: rgb(201, 236, 240) 2px 2px 5px !important;
+}
+
+.slick-prev::before {
+    color: rgb(19, 206, 226) !important;
+}
+
+.slick-next {
+    margin-left: 11px !important;
+    left: 93% !important;
+    z-index: 10 !important;
+    height: 50px !important;
+    width: 50px !important;
+    border-radius: 8px !important;
+    border: 1px solid !important;
+    border-color: rgb(181, 231, 237) !important;
+    background-color: rgb(255, 255, 255) !important;
+    box-shadow: rgb(201, 236, 240) 2px 2px 5px !important;
+}
+
+.slick-next::before {
+    color: rgb(19, 206, 226) !important;
+}
+
+.section-share {
+    &.section-specialty {
+        background: white;
+    }
+
+    &.section-outstanding-doctor {
+        background-image: url('../../assets/outstanding-doctor/background-doctor.png');
+        height: 470px;
+    }
+
+    &.section-about {
+        background-image: url('../../assets/outstanding-doctor/background-doctor.png');
+        height: 470px;
+    }
+
+    .section-body {
+            .section-customize {
+                .bg-image {
+                    cursor: pointer;
+                    width: 300px;
+                    height: 200px;
+                    border: 1px solid rgb(241, 241, 241);
+                    border-radius: 16px;
+                    background-position: center center;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    background-color: #eee;
+                    
+                    &.section-specialty {
+                        background-image: url('../../assets/specialty/tim-mach.png');
+                    }
+
+                    &.section-specialty {
+                        background-image: url('../../assets/specialty/tim-mach.png');
+                        
+                    }
+
+                    &.section-medical-facilities {
+                        background-image: url('../../assets/health-facilities/benh-vien-cho-ray.jpg');
+                    }
+
+                    &.section-outstanding-doctor {
+                        background-image: url('../../assets/outstanding-doctor/bac-si.png');
+                        border-radius: 50%;
+                        width: 240px;
+                        height: 240px;
+                    }
+
+                    &.section-hand-book {
+                        background-image: url('../../assets/handbook/co-nen-nieng-rang-khong.png');
+                    }
+                }
+            }
+        }
+}
+
+.section-share {
+    height: 400px;
+    margin-top: 20px;
+
+    
+    .section-container {
+        margin: 0 250px 0 350px; 
+        
+        .section-header {
+            height: 60px;
+            margin-bottom: 32px;
+            padding-top: 26px;
+
+            .title-section {
+                font-size: 22px;
+                font-weight: 600;
+            }
+
+            .btn-section {
+                background-color: rgb(218, 243, 246);
+                padding: 12px 10px;
+                border-radius: 16px;
+                border: transparent;
+                float: right;
+                display: block;
+
+                .btn-section-item {
+                    font-size: 20px;
+                    color: rgb(52, 146, 158);
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+}
+
+.section-outstanding-doctor {
+    .outer-bg {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 10px;
+        margin-top: 40px;
+        margin-right: 66px;
+    }
+}
+
+.section-about {
+    .section-about-header {
+        padding: 20px 10px;
+        font-size: 30px;
+        font-weight: 600;
+        text-align: center;
+    }
+
+    .section-about-content {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.home-footer {
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 20px;
+
+    a {
+        text-decoration: none;
+    }
+}
+
+
