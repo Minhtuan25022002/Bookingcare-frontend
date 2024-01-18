@@ -16,8 +16,8 @@ class About extends Component {
                             <iframe width="592" height="322" style={{ borderRadius: '15px' }} 
                                 src="https://www.youtube.com/embed/7tiR7SI4CkI" 
                                 title="BookingCare trên VTV1 ngày 21/02/2018 - Chương trình Cà phê khởi nghiệp" 
-                                frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                                allowfullscreen>
+                                frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                allowFullScreen>
                             </iframe>
                         </div>
                         <div className='content-right'>
