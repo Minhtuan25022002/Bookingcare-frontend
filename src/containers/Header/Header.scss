@@ -20,4 +20,40 @@
             font-size: $base-size + 1px;
         }
     }
+    
+    .languages {
+        .language-en {
+            opacity: 0.6;
+            font-size: 17px;
+            margin-right: 15px;
+            margin-left: 10px;
+            cursor: pointer;
+
+            &.active {
+                opacity: 1;
+                color: rgba(2, 249, 142, 0.849);
+            }
+
+            &:hover {
+                opacity: 1;
+                color: rgba(2, 249, 142, 0.849);
+            }
+        }
+
+        .language-vi {
+            opacity: 0.6;
+            font-size: 17px;
+            cursor: pointer;
+
+            &.active {
+                opacity: 1;
+                color: orange;
+            }
+
+            &:hover {
+                opacity: 1;
+                color: orange;
+            }
+        }
+    }
 }
