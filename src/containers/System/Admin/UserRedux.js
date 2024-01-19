@@ -3,6 +3,7 @@ import { FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
 import { getAllCodeService } from '../../../services/userService';
 import { LANGUAGES } from '../../../utils'
+import * as actions from '../../../store/actions'
 
 class UserRedux extends Component {
     constructor(props) {
@@ -13,21 +14,33 @@ class UserRedux extends Component {
     }
 
     async componentDidMount() {
-        try {
-            let res = await getAllCodeService('gender');
-            if(res && res.errCode === 0) {
-                this.setState({
-                    genderArr: res.data
-                })
-            }
-        } catch (error) {
-            console.log(error);
+        this.props.getGenderStart()
+        // try {
+        //     let res = await getAllCodeService('gender');
+        //     if(res && res.errCode === 0) {
+        //         this.setState({
+        //             genderArr: res.data
+        //         })
+        //     }
+        // } catch (error) {
+        //     console.log(error);
+        // }
+    }
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        //render auto chạy vào => didupdate
+        // quá khứ previous và hiện tại  (this)
+        if(prevProps.genderRedux !== this.props.genderRedux) {
+            this.setState({
+                genderArr: this.props.genderRedux
+            })
         }
     }
 
     render() {
         let genders = this.state.genderArr;
         let language = this.props.language;
+        // console.log('redux',genderRedux);
         
         return (
             <div className='user-redux-container' >
@@ -69,7 +82,7 @@ class UserRedux extends Component {
                             <div className="row my-3" >
                                 <div className="form-group col-md-3">
                                     <label><FormattedMessage id='manage-user.gender'/></label>
-                                    <select className="form-control">
+                                    <select className="form-select">
                                         {genders && genders.length > 0 &&
                                             genders.map((item, index) => {
                                                 return (
@@ -81,14 +94,14 @@ class UserRedux extends Component {
                                 </div>
                                 <div className="form-group col-md-3">
                                     <label><FormattedMessage id='manage-user.position'/></label>
-                                    <select className="form-control">
+                                    <select className="form-select">
                                         <option selected>Choose...</option>
                                         <option>...</option>
                                     </select>
                                 </div>
                                 <div className="form-group col-md-3">
                                     <label><FormattedMessage id='manage-user.role'/></label>
-                                    <select className="form-control">
+                                    <select className="form-select">
                                         <option selected>Choose...</option>
                                         <option>...</option>
                                     </select>
@@ -110,12 +123,17 @@ class UserRedux extends Component {
 
 const mapStateToProps = state => {
     return {
-        language: state.app.language
+        language: state.app.language,
+        //state.admin bởi vì admin đã khai báo là key trong file rootReducers
+        genderRedux: state.admin.genders,
     };
 };
 
+//fire 1 action
 const mapDispatchToProps = dispatch => {
     return {
+        getGenderStart: () => dispatch(actions.fetchGenderStart())
+        // changeLanguageAppRedux: (language) => dispatch(changeLanguageApp(language))
     };
 };
 
